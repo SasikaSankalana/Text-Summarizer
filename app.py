@@ -34,7 +34,16 @@ async def predict_route(text):
 
         obj = PredictionPipeline()
         text = obj.predict(text)
-        return text
+        # return text
+        return "server test"
+    except Exception as e:
+        raise e
+
+
+@app.get("/test")
+async def test_route():
+    try:
+        return "server test"
     except Exception as e:
         raise e
 
